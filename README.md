@@ -1,5 +1,6 @@
 ![icon](https://user-images.githubusercontent.com/35189369/120914952-6ca94900-c6a1-11eb-8b7a-ea5fb495e291.png)
-![Screenshot_1622438005](https://user-images.githubusercontent.com/35189369/120914958-70d56680-c6a1-11eb-9aed-01b3c7353aa4.png)
+![Screenshot_1623094721](https://user-images.githubusercontent.com/35189369/121126755-fa637080-c828-11eb-9ffe-3914b8ff053b.png)
+
 # cwiz
 
 A weather Flutter project.
