@@ -31,7 +31,7 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
     android {
-        compileSdkVersion 30
+        compileSdkVersion 31
 
         sourceSets {
             main.java.srcDirs += 'src/main/kotlin'
@@ -43,6 +43,7 @@ if (keystorePropertiesFile.exists()) {
             targetSdkVersion 30
             versionCode flutterVersionCode.toInteger()
             versionName flutterVersionName
+            multiDexEnabled true
         }
 
         signingConfigs {
@@ -55,7 +56,7 @@ if (keystorePropertiesFile.exists()) {
         }
         buildTypes {
             release {
-                signingConfig signingConfigs.debug
+                signingConfig signingConfigs.release
             }
             getByName("release") {
                 // Enables code shrinking, obfuscation, and optimization for only
