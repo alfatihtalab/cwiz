@@ -4,6 +4,7 @@ import 'package:cwiz/main.dart';
 import 'package:cwiz/models/explore_weather.dart';
 import 'package:cwiz/models/weather_bulk_data.dart';
 import 'package:cwiz/screens/feels_like_screen.dart';
+import 'package:cwiz/screens/forcast_screen.dart';
 import 'package:cwiz/screens/today_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -46,7 +47,7 @@ class _HomePageState extends State<HomePage> {
 // TODO: Replace with Card2
     FeelsLikePage(),
 // TODO: Replace with Card3
-    FeelsLikeCard(dayTime: 'Morning', temp: 54)
+  ForcastPage()
   ];
 
   @override
@@ -73,12 +74,12 @@ class _HomePageState extends State<HomePage> {
               label: 'Today',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.explore),
-              label: 'Forcast',
+              icon: Icon(Icons.stars),
+              label: 'Feels Like',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.find_in_page_sharp),
-              label: 'Feels Like',
+              icon: Icon(Icons.ac_unit_outlined),
+              label: 'Forcast',
             )
           ],
           currentIndex: _selectedIndex,

@@ -1,6 +1,7 @@
 import 'package:cwiz/components/today_summary_card.dart';
 import 'package:cwiz/components/weather_card.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TodayPage extends StatefulWidget {
   const TodayPage({Key? key}) : super(key: key);
@@ -20,6 +21,10 @@ class _TodayPageState extends State<TodayPage> {
         WeatherCard(),
         SizedBox(
           height: 10,
+        ),
+        ListTile(
+          title: Text('Today', style: GoogleFonts.baloo(fontSize: 25),
+          ),
         ),
         TodaySummary()
       ]),

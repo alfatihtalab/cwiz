@@ -54,25 +54,29 @@ class _BootStrapPageState extends State<BootStrapPage> {
 
         exploreWeather = weatherManager.exploreWeather;
         bulkData = weatherManager.bulkData;
+        //here there's bug
+        print('here 1');
+
         return true;
       } catch (e) {
+        print('here 2');
+
         //print('error');
         return false;
       }
     }
     else{
+      print('here 3');
+
       return false;
     }
-
-
-
   }
 
   @override
   void initState() {
     // TODO: implement initState
     //initConnectivity();
-
+    // getData();
     // _connectivitySubscription =
     //     _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
     super.initState();
@@ -87,6 +91,8 @@ class _BootStrapPageState extends State<BootStrapPage> {
   @override
   Widget build(BuildContext context) {
     return Consumer<WeatherManager>(builder: (context, manager, child) {
+      manager.getWeatherData();
+      manager.getBulkData();
       return FutureBuilder(
         future: getData(),
         builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {

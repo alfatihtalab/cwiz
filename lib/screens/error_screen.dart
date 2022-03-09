@@ -1,4 +1,7 @@
+import 'package:cwiz/app_manager/weather_manager.dart';
+import 'package:cwiz/main.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ErrorPage extends StatelessWidget {
   const ErrorPage({Key? key}) : super(key: key);
@@ -52,10 +55,15 @@ class ErrorPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                   color: Colors.green,
-                  onPressed: () {
+                  onPressed: (){
                     // TODO 8: Go to Recipes Tab
                     // await Provider.of<WeatherManager>(context, listen: true)
                     //     .getWeatherData();
+                    // weatherManager.getWeatherData();
+                    // weatherManager.getBulkData();
+                    // context.watch<WeatherManager>().getWeatherData();
+                    // context.watch<WeatherManager>().getWeatherData();
+
                     Navigator.pushReplacementNamed(context, '/');
                   },
                 ),

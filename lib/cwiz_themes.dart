@@ -77,7 +77,7 @@ class CwizTheme {
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
           selectedItemColor: Colors.cyan,
           unselectedItemColor: Colors.grey),
-      cardColor: Colors.cyan.shade200.withOpacity(0.4),
+      // cardColor: Colors.cyan.shade200.withOpacity(0.4),
       textTheme: lightTextTheme,
     );
   }
@@ -96,6 +96,7 @@ class CwizTheme {
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         selectedItemColor: Colors.cyanAccent,
       ),
+      iconTheme: IconThemeData(color: Colors.cyan),
       textTheme: darkTextTheme,
     );
   }

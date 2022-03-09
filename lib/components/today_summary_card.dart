@@ -127,8 +127,8 @@ class _TodaySummaryState extends State<TodaySummary> {
         //color: Color.fromARGB(255, 255, 221, 100),
         size: 32,
       ),
-      title: Text(title, style: GoogleFonts.acme()),
-      trailing: Text(value, style: GoogleFonts.aBeeZee(),),
+      title: Text(title, style: GoogleFonts.aBeeZee(fontWeight: FontWeight.w300,)),
+      trailing: Text(value, style: GoogleFonts.aBeeZee(fontWeight: FontWeight.w900,),),
     );
   }
 }

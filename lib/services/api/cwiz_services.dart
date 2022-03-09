@@ -29,7 +29,9 @@ class ApiBaseHelper {
     //   return exploreWeather;
     // } else {
       final response = await http.get(Uri.parse(
-          "https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&exclude=hourly,minutely,&appid=4261f7bd50402a430c86a974023c8fbf&units=metric"));
+          "https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&exclude=hourly,minutely,&appid=4261f7bd50402a430c86a974023c8fbf&units=metric")).timeout(Duration(seconds: 9),onTimeout: (){
+        throw BadRequestException("timeout");
+      });
       switch (response.statusCode) {
         case 200:
           exploreWeather = ExploreWeather.fromJson(jsonDecode(response.body));

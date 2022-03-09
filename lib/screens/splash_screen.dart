@@ -1,3 +1,4 @@
+import 'package:cwiz/components/rounded_image.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -12,8 +13,8 @@ class SplashScreen extends StatelessWidget {
         tag: 'splashScreen',
         child: Center(
           child: AspectRatio(
-              aspectRatio: size.height * 0.25 / size.width * 0.25,
-              child: Image(image: AssetImage('assets/logo/cwiz_logo.png'))),
+              aspectRatio: size.height * 0.30 / size.width * 0.30,
+              child: CircleImage(imageProvider: AssetImage('assets/logo/cwiz_logo.png',),imageRadius: 70,)),
         ),
       )),
     );

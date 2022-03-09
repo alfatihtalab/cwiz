@@ -59,6 +59,7 @@ class _WeatherCardState extends State<WeatherCard> {
 
   ConnectivityResult _connectionStatus = ConnectivityResult.none;
   final Connectivity _connectivity = Connectivity();
+
   //late StreamSubscription<ConnectivityResult> _connectivitySubscription;
   @override
   void dispose() {
@@ -79,7 +80,7 @@ class _WeatherCardState extends State<WeatherCard> {
       imgIsLoaded = true;
       return imgIsLoaded;
     }
-    else{
+    else {
       imgIsLoaded = false;
       return imgIsLoaded;
     }
@@ -91,12 +92,12 @@ class _WeatherCardState extends State<WeatherCard> {
     });
   }
 
-  Future<void> getConnectivityResult() async{
+  Future<void> getConnectivityResult() async {
     _connectionStatus = await (Connectivity().checkConnectivity());
-
   }
+
   @override
-  void initState(){
+  void initState() {
     // TODO: implement initState
     weatherBulkData = weatherManager.bulkData;
     exploreWeather = weatherManager.exploreWeather;
@@ -104,7 +105,6 @@ class _WeatherCardState extends State<WeatherCard> {
     color = getRandomColor();
     super.initState();
     initConnectivity();
-
   }
 
   @override
@@ -121,11 +121,17 @@ class _WeatherCardState extends State<WeatherCard> {
       child: Container(
         //margin: EdgeInsets.all(16.0),
         constraints: BoxConstraints.expand(
-          height: MediaQuery.of(context).size.height / 3,
-          width: MediaQuery.of(context).size.width ,
+          height: MediaQuery
+              .of(context)
+              .size
+              .height / 3,
+          width: MediaQuery
+              .of(context)
+              .size
+              .width,
         ),
         decoration: BoxDecoration(
-          image:  DecorationImage(
+          image: DecorationImage(
             // image: AssetImage(imgAsset),
             // image: AssetImage("assets/backgrounds/dis_clouds.jpg"),
             image: NetworkImage(imgAsset),
@@ -190,7 +196,9 @@ class _WeatherCardState extends State<WeatherCard> {
               child: Wrap(
                   alignment: WrapAlignment.start,
                   spacing: 12,
-                  children: createTagChips(context.watch<WeatherManager>().bulkData)),
+                  children: createTagChips(context
+                      .watch<WeatherManager>()
+                      .bulkData)),
             ),
             Center(
               child: Row(
@@ -223,49 +231,67 @@ class _WeatherCardState extends State<WeatherCard> {
   String getRandomBackground() {
     dynamic clearImages = [
       "https://highdefwallpaper.com/wp-content/uploads/2017/06/clear-sky-hd-800x600.jpg",
+      "https://iresizer.devops.arabiaweather.com/resize?url=https://adminassets.devops.arabiaweather.com/sites/default/files/field/image/IMG-20201210-WA0008.jpg&size=850x478&force_jpg=1"
 
     ];
     dynamic listImages = [
-      // "assets/backgrounds/back2.jpg",
-      // "assets/backgrounds/cloud_blue_sky.jpg",
-      // "assets/backgrounds/dis_clouds.jpg",
-      // "assets/backgrounds/frezz.jpg",
-      // "assets/backgrounds/rain2.jpg",
-      // "assets/backgrounds/ch.jpg",
-      // "assets/backgrounds/jm.jpg",
-      // "assets/backgrounds/spart.jpg",
-      // "assets/backgrounds/mountin.jpg",
-      // "assets/backgrounds/sun1.jpg",
-      // "assets/backgrounds/sun_back.jpg",
       "https://wallpapercave.com/wp/wp4077236.jpg",
-      "https://images.unsplash.com/photo-1502635994848-2eb3b4a38201?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80",
-      "https://images.unsplash.com/photo-1523772721666-22ad3c3b6f90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-      "https://cdn.barnimages.com/wp-content/uploads/2018/04/20170710-barnimages-003-740x493.jpg",
-      "https://cdn.pixabay.com/photo/2020/05/06/15/15/background-5137941_960_720.jpg"
+      "https://cdn.pixabay.com/photo/2020/05/06/15/15/background-5137941_960_720.jpg",
+      "https://c4.wallpaperflare.com/wallpaper/585/194/405/pictures-of-nature-backgrounds-1920x1200-wallpaper-preview.jpg",
+      "https://c4.wallpaperflare.com/wallpaper/123/670/530/laptop-backgrounds-nature-images-1920x1200-wallpaper-preview.jpg",
+      "https://c4.wallpaperflare.com/wallpaper/87/851/622/laptop-backgrounds-nature-images-1920x1200-wallpaper-preview.jpg",
+      "https://c4.wallpaperflare.com/wallpaper/803/675/618/background-nature-image-1920x1200-wallpaper-preview.jpg"
+    ];
+    dynamic cloudyImages = [
+    "https://cdn.barnimages.com/wp-content/uploads/2018/04/20170710-barnimages-003-740x493.jpg",
+      "https://c4.wallpaperflare.com/wallpaper/290/1022/455/laptop-backgrounds-nature-images-1920x1200-wallpaper-preview.jpg",
+      "https://c4.wallpaperflare.com/wallpaper/121/684/1010/cool-background-photos-nature-scenes-1920x1200-wallpaper-preview.jpg",
+      "https://www.journal-news.com/resizer/dJBHc8xtwG5PgqsNohLBOrU-HH8=/814x458/cloudfront-us-east-1.images.arcpublishing.com/coxohio/FDIJ2UYUQJHGFMJGER3FMGKMSE.jpg"
+
+    ];
+    dynamic rainyImages = [
+    "https://images.unsplash.com/photo-1502635994848-2eb3b4a38201?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80",
+      "https://samitivej-prod-new-website.s3.ap-southeast-1.amazonaws.com/public/uploads/descriptions/1a2e1c368b9a82a61d68227e537c5c9a.jpg",
+      "https://www.echolive.ie/cms_media/module_img/5602/2801274_1006_dashboardbig_rainonglassrainyweather-origin.jpg"
+    ];
+    dynamic otherImages = [
+      "https://www.freepptbackgrounds.net/wp-content/uploads/2020/03/Gradient-colorful-backgrounds.jpg",
+      "https://c4.wallpaperflare.com/wallpaper/612/498/569/cool-backgrounds-nature-1920x1200-wallpaper-preview.jpg",
+
     ];
     Random random = new Random();
     String image_name = listImages[random.nextInt(listImages.length)];
-    if(weatherBulkData.weather![0].main.toString().toLowerCase() == "clear"){
-      image_name = "https://images.unsplash.com/photo-1502635994848-2eb3b4a38201?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80";
+    switch (weatherBulkData.weather![0].main.toString().toLowerCase()) {
+      case "clear":
+        image_name = clearImages[random.nextInt(clearImages.length)];
+        break;
+      case "clouds":
+        image_name = cloudyImages[random.nextInt(cloudyImages.length)];
+        break;
+      case "rain":
+        image_name = rainyImages[random.nextInt(rainyImages.length)];
+        break;
+      case "snow":
+        image_name = "https://images2.minutemediacdn.com/image/upload/c_fit,f_auto,fl_lossy,q_auto,w_728/v1555473019/shape/mentalfloss/520560-istock-613015246.jpg?itok=PGekk6Oc";
+      break;
+        default:
+          image_name = otherImages[random.nextInt(otherImages.length)];
 
     }
-    print(image_name);
-
-    return image_name;
-  }
-
-  Color getRandomColor() {
-    List<Color> colors = [
-      Colors.blueGrey,
-      Colors.purple.shade800,
-      Colors.deepOrange.shade900.withOpacity(.6),
-      Colors.indigo.shade800.withOpacity(.5),
-      Colors.yellow.shade800
-    ];
-    Random random = new Random();
-    Color color = colors[random.nextInt(colors.length)];
-    //print(image_name);
-
-    return color;
-  }
+  return image_name;
 }
+
+Color getRandomColor() {
+  List<Color> colors = [
+    Colors.blueGrey,
+    Colors.purple.shade800,
+    Colors.deepOrange.shade900.withOpacity(.6),
+    Colors.indigo.shade800.withOpacity(.5),
+    Colors.yellow.shade800
+  ];
+  Random random = new Random();
+  Color color = colors[random.nextInt(colors.length)];
+  //print(image_name);
+
+  return color;
+}}
