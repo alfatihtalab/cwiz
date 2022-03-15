@@ -39,9 +39,9 @@ class _BootStrapPageState extends State<BootStrapPage> {
     }
   }
 
-  Future<void> _updateConnectionStatus() async {
-
-  }
+  // Future<void> _updateConnectionStatus() async {
+  //
+  // }
 
   Future<bool> getData() async {
     //await Future.delayed(Duration(seconds: 5));
@@ -55,18 +55,18 @@ class _BootStrapPageState extends State<BootStrapPage> {
         exploreWeather = weatherManager.exploreWeather;
         bulkData = weatherManager.bulkData;
         //here there's bug
-        print('here 1');
+        // print('here 1');
 
         return true;
       } catch (e) {
-        print('here 2');
+        // print('here 2');
 
         //print('error');
         return false;
       }
     }
     else{
-      print('here 3');
+      // print('here 3');
 
       return false;
     }

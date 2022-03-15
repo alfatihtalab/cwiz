@@ -4,8 +4,8 @@ import 'dart:convert';
 import 'package:cwiz/models/explore_weather.dart';
 import 'package:cwiz/models/weather_bulk_data.dart';
 import 'package:cwiz/services/app_exeption.dart';
-import 'package:cwiz/services/location.dart';
 import 'package:http/http.dart' as http;
+import 'package:location/location.dart';
 
 class ApiBaseHelper {
   static const url =
@@ -16,7 +16,7 @@ class ApiBaseHelper {
 
   //TODO: get weather data
 
-  static Future<ExploreWeather> getExploreWeatherData(Location location) async {
+  static Future<ExploreWeather> getExploreWeatherData(LocationData location) async {
     late ExploreWeather exploreWeather;
 
     // FileCacheManger fileCacheManger = FileCacheManger();
@@ -48,7 +48,7 @@ class ApiBaseHelper {
       }
   }
 
-  static Future<WeatherBulkData> getWeatherBulkData(Location location) async {
+  static Future<WeatherBulkData> getWeatherBulkData(LocationData location) async {
     late WeatherBulkData weatherBulkData;
     // late HashMap<dynamic, dynamic> hashMapBulk;
 

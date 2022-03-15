@@ -36,9 +36,9 @@ class _ForcastPageState extends State<ForcastPage> {
     //   print(element.temp!.eve.toString());
     // });
 
-    var dt = DateTime.fromMicrosecondsSinceEpoch(dailyData[1].dt! * 1000000);
-    var formatedSunrise = dayFormat.format(dt);
-    print('time ' + "${formatedSunrise}");
+    //var dt = DateTime.fromMicrosecondsSinceEpoch(dailyData[1].dt! * 1000000);
+    //var formatedSunrise = dayFormat.format(dt);
+    //print('time ' + "${formatedSunrise}");
 
     return ListView(
       //shrinkWrap: true,

@@ -42,10 +42,10 @@ class _FeelsLikePageState extends State<FeelsLikePage> {
     feelsLikeListC.add(feelsLike?.night?? 0.0);
     feelsLikeListC.add(feelsLike?.eve?? 0.0);
 
-    dailyWeather.forEach((element) {
-      print(element.feelsLike?.day);
-    });
-    print(feelsLike?.day);
+    // dailyWeather.forEach((element) {
+    //   print(element.feelsLike?.day);
+    // });
+    // print(feelsLike?.day);
     return ListView(
       //shrinkWrap: true,
       controller: ScrollController(),
@@ -65,7 +65,7 @@ class _FeelsLikePageState extends State<FeelsLikePage> {
 
              final random = Random().nextInt(3);
              final temp = feelsLikeListC[index] + random + 1;
-             print(temp);
+             //print(temp);
              return FeelsLikeCard(dayTime: dayTime.dayTime, temp: temp, secondaryText: dayTime.secondaryText, quotes: dayTime.quotes[random],);
                 }, separatorBuilder: (BuildContext context, int index) => const Divider(thickness: 1.0), itemCount:4,
 

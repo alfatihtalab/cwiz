@@ -56,14 +56,14 @@ class _SettingsPageState extends State<SettingsPage> {
           Card(
             child: ExpansionTile(
               title: Text("App usage and  privacy policy:"),
-            collapsedTextColor: Colors.orange.shade500,
+            // collapsedTextColor: Colors.orange.shade500,
               textColor:Theme.of(context).iconTheme.color,
 
               children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  "   By using this app you must confirm that and you are not allowed to break or hack the software polices!, such as third parties and using the same code snippets.\n   This app can access location and connection services, it can use third party to handle the api requests. Our privacy grantees to you that we do not use any personal info or data respect with your phone. ",
+                  "   By using this app you must confirm that and you are not allowed to break or hack the software ownership rights!, such as third parties and using the same code snippets.\n   This app can access location and connection services, it can use third party to handle the api requests. Our privacy grantees to you that we do not use any personal info or data respect with your phone. ",
                   style: GoogleFonts.carme(fontSize: 16),
                   textAlign: TextAlign.justify,
                 ),

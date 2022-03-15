@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:cwiz/app_manager/weather_manager.dart';
 import 'package:cwiz/cwiz_themes.dart';

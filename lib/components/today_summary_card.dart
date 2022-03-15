@@ -46,11 +46,11 @@ class _TodaySummaryState extends State<TodaySummary> {
     );
     var formatedSunrise = timeFormat.format(sunrise);
     var formatedSunset = timeFormat.format(sunset);
-    print('time ' +
-        "${formatedSunrise }");
+    // print('time ' +
+    //     "${formatedSunrise }");
 
     // print(context.watch<WeatherManager>().exploreWeather.daily![0].temp!.toString());
-    print(dayFormat.format(DateTime.fromMicrosecondsSinceEpoch(context.watch<WeatherManager>().exploreWeather.daily![0].dt! * 1000000 )));
+    //print(dayFormat.format(DateTime.fromMicrosecondsSinceEpoch(context.watch<WeatherManager>().exploreWeather.daily![0].dt! * 1000000 )));
     // print(dayFormat.format(DateTime.fromMicrosecondsSinceEpoch(context.watch<WeatherManager>().bulkData.dt! * 10000 )));
     // print(context.watch<WeatherManager>().bulkData.dt);
 
