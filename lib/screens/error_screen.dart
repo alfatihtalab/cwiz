@@ -1,5 +1,10 @@
-import 'package:cwiz/main.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../weather/cubit/weather_cubit.dart';
+
+
 
 class ErrorPage extends StatelessWidget {
   const ErrorPage({Key? key}) : super(key: key);
@@ -52,25 +57,22 @@ class ErrorPage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
                   ),
-                  color: Colors.green,
+                  color: Colors.blue,
                   onPressed: () async{
-                    // TODO 8: Go to Recipes Tab
-                    // await Provider.of<WeatherManager>(context, listen: true)
-                    //     .getWeatherData();
-                    // weatherManager.getWeatherData();
-                    // weatherManager.getBulkData();
-                    // context.watch<WeatherManager>().getWeatherData();
-                    // context.watch<WeatherManager>().getWeatherData();
-
-
-                    Navigator.pushReplacementNamed(context, '/');
+                    BlocProvider.of<WeatherCubit>(context).fetchWeather();
                   },
                 ),
               ],
             ),
           ),
         ),
+
       ),
+      // floatingActionButton: FloatingActionButton(onPressed: onPress),
     );
+  }
+
+  void onPress(){
+    // Text("hello" , style: TextStyle(),)
   }
 }
