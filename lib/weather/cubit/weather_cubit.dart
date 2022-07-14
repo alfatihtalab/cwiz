@@ -15,8 +15,6 @@ class WeatherCubit extends Cubit<WeatherState> {
   WeatherCubit(this._weatherRepository) : super(WeatherInitial());
 
 
-
-
   Future<void> fetchWeather() async {
     emit(WeatherLoading());
     try {

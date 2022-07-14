@@ -15,7 +15,7 @@ class WeatherDataProvider {
 
   Future<CurrentWeather> readCurrentWeatherFromApi({required LocationData locationData}) async {
     // Read from DB or make network request etc...
-    var url = Uri.parse(AppUrl.currentWeatherURL + "?lat=${locationData.latitude}&lon=${locationData.longitude}&appid=$app_id");
+    var url = Uri.parse(AppUrl.currentWeatherURL + "?lat=${locationData.latitude}&lon=${locationData.longitude}&appid=$app_id" + "&units=metric");
 
     late CurrentWeather currentWeather;
     var client = http.Client();
@@ -55,8 +55,45 @@ class WeatherDataProvider {
     // return currentWeather;
   }
 
-  Future<FiveDaysForecast?> readFiveDaysForecastFromApi() async {
-    return null;
+  Future<FiveDaysForecast> readFiveDaysForecastFromApi({required LocationData locationData}) async {
+    // Read from DB or make network request etc...
+    var url = Uri.parse(AppUrl.fiveDaysForecastURL + "?lat=${locationData.latitude}&lon=${locationData.longitude}&appid=$app_id" + "&units=metric");
+
+    late FiveDaysForecast fiveDaysForecast;
+    var client = http.Client();
+    try {
+      var response = await client.get(
+          url);
+      var decodedResponse = jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
+
+      final code = response.statusCode;
+      // print("here ${response.body}");
+      print("hereDecoded ${response.body}");
+      // currentWeather = CurrentWeather.fromJson(decodedResponse!);
+      // print("second ${CurrentWeather.fromJson(decodedResponse)}");
+      switch (response.statusCode) {
+        case 200:
+        // final currentWeather1 = currentWeatherFromJson(response.body);
+          fiveDaysForecast = FiveDaysForecast.fromJson(decodedResponse);
+          // print("second $currentWeather");
+
+          // fileCacheManger.writeWeather(response.body);
+          return fiveDaysForecast;
+        case 400:
+        case 401:
+        case 403:
+        case 500:
+          throw BadRequestException(response.body.toString());
+        default:
+          throw FetchDataExeption(response.body.toString());
+      }
+    }
+    catch(e){
+      print(e.toString());
+      throw FetchDataExeption(e.toString());
+    }finally{
+      client.close();
+    }
 
 
   }

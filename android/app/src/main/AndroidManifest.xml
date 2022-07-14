@@ -28,7 +28,7 @@
     </queries>
 
    <application
-        android:label="cwiz"
+        android:label="Cwiz"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"

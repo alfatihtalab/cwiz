@@ -454,31 +454,31 @@ abstract class _CurrentWeather implements CurrentWeather {
       _$_CurrentWeather.fromJson;
 
   @override
-  Coord? get coord => throw _privateConstructorUsedError;
+  Coord? get coord;
   @override
-  List<Weather>? get weather => throw _privateConstructorUsedError;
+  List<Weather>? get weather;
   @override
-  String? get base => throw _privateConstructorUsedError;
+  String? get base;
   @override
-  Main? get main => throw _privateConstructorUsedError;
+  Main? get main;
   @override
-  int? get visibility => throw _privateConstructorUsedError;
+  int? get visibility;
   @override
-  Wind? get wind => throw _privateConstructorUsedError;
+  Wind? get wind;
   @override
-  Clouds? get clouds => throw _privateConstructorUsedError;
+  Clouds? get clouds;
   @override
-  int? get dt => throw _privateConstructorUsedError;
+  int? get dt;
   @override
-  Sys? get sys => throw _privateConstructorUsedError;
+  Sys? get sys;
   @override
-  int? get timezone => throw _privateConstructorUsedError;
+  int? get timezone;
   @override
-  int? get id => throw _privateConstructorUsedError;
+  int? get id;
   @override
-  String? get name => throw _privateConstructorUsedError;
+  String? get name;
   @override
-  int? get cod => throw _privateConstructorUsedError;
+  int? get cod;
   @override
   @JsonKey(ignore: true)
   _$$_CurrentWeatherCopyWith<_$_CurrentWeather> get copyWith =>
@@ -602,7 +602,7 @@ abstract class _Clouds implements Clouds {
   factory _Clouds.fromJson(Map<String, dynamic> json) = _$_Clouds.fromJson;
 
   @override
-  int? get all => throw _privateConstructorUsedError;
+  int? get all;
   @override
   @JsonKey(ignore: true)
   _$$_CloudsCopyWith<_$_Clouds> get copyWith =>
@@ -743,9 +743,9 @@ abstract class _Coord implements Coord {
   factory _Coord.fromJson(Map<String, dynamic> json) = _$_Coord.fromJson;
 
   @override
-  double? get lon => throw _privateConstructorUsedError;
+  double? get lon;
   @override
-  double? get lat => throw _privateConstructorUsedError;
+  double? get lat;
   @override
   @JsonKey(ignore: true)
   _$$_CoordCopyWith<_$_Coord> get copyWith =>
@@ -969,17 +969,17 @@ abstract class _Main implements Main {
   factory _Main.fromJson(Map<String, dynamic> json) = _$_Main.fromJson;
 
   @override
-  double? get temp => throw _privateConstructorUsedError;
+  double? get temp;
   @override
-  double? get feels_like => throw _privateConstructorUsedError;
+  double? get feels_like;
   @override
-  double? get temp_min => throw _privateConstructorUsedError;
+  double? get temp_min;
   @override
-  double? get temp_max => throw _privateConstructorUsedError;
+  double? get temp_max;
   @override
-  int? get pressure => throw _privateConstructorUsedError;
+  int? get pressure;
   @override
-  int? get humidity => throw _privateConstructorUsedError;
+  int? get humidity;
   @override
   @JsonKey(ignore: true)
   _$$_MainCopyWith<_$_Main> get copyWith => throw _privateConstructorUsedError;
@@ -1201,17 +1201,17 @@ abstract class _Sys implements Sys {
   factory _Sys.fromJson(Map<String, dynamic> json) = _$_Sys.fromJson;
 
   @override
-  int? get type => throw _privateConstructorUsedError;
+  int? get type;
   @override
-  int? get id => throw _privateConstructorUsedError;
+  int? get id;
   @override
-  double? get message => throw _privateConstructorUsedError;
+  double? get message;
   @override
-  String? get country => throw _privateConstructorUsedError;
+  String? get country;
   @override
-  int? get sunrise => throw _privateConstructorUsedError;
+  int? get sunrise;
   @override
-  int? get sunset => throw _privateConstructorUsedError;
+  int? get sunset;
   @override
   @JsonKey(ignore: true)
   _$$_SysCopyWith<_$_Sys> get copyWith => throw _privateConstructorUsedError;
@@ -1390,13 +1390,13 @@ abstract class _Weather implements Weather {
   factory _Weather.fromJson(Map<String, dynamic> json) = _$_Weather.fromJson;
 
   @override
-  int? get id => throw _privateConstructorUsedError;
+  int? get id;
   @override
-  String? get main => throw _privateConstructorUsedError;
+  String? get main;
   @override
-  String? get description => throw _privateConstructorUsedError;
+  String? get description;
   @override
-  String? get icon => throw _privateConstructorUsedError;
+  String? get icon;
   @override
   @JsonKey(ignore: true)
   _$$_WeatherCopyWith<_$_Weather> get copyWith =>
@@ -1553,11 +1553,11 @@ abstract class _Wind implements Wind {
   factory _Wind.fromJson(Map<String, dynamic> json) = _$_Wind.fromJson;
 
   @override
-  double? get speed => throw _privateConstructorUsedError;
+  double? get speed;
   @override
-  double? get deg => throw _privateConstructorUsedError;
+  double? get deg;
   @override
-  double? get gust => throw _privateConstructorUsedError;
+  double? get gust;
   @override
   @JsonKey(ignore: true)
   _$$_WindCopyWith<_$_Wind> get copyWith => throw _privateConstructorUsedError;

@@ -20,7 +20,7 @@ class SplashScreen extends StatelessWidget {
               child: AspectRatio(
                   aspectRatio: size.height * 0.30 / size.width * 0.30,
                   child: const CircleImage(imageProvider: AssetImage(
-                    'assets/logo/cwiz_logo.png',), imageRadius: 70,)),
+                    'assets/icons/app_icon.png',), imageRadius: 70,)),
             ),
           )),
     );

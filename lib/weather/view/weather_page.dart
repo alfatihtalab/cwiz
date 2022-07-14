@@ -1,8 +1,10 @@
 import 'package:cwiz/data/repository/weather_repository.dart';
+import 'package:cwiz/weather/cubit/quote_cubit.dart';
 import 'package:cwiz/weather/view/weather_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../cubit/page_view_cubit.dart';
 import '../cubit/weather_cubit.dart';
 
 
@@ -17,9 +19,13 @@ class WeatherPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => WeatherCubit(WeatherRepository()),
-      child: WeatherView(),
+    return MultiBlocProvider(
+      providers: [
+    BlocProvider<WeatherCubit>(create: (_) => WeatherCubit(WeatherRepository()),),
+    BlocProvider<PageViewCubit>(create: (_) => PageViewCubit(),),
+    BlocProvider<QuoteCubit>(create: (_) => QuoteCubit(),),
+      ], child: WeatherView(),
+
     );
   }
 }

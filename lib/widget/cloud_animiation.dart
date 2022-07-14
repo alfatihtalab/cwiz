@@ -3,9 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class DrawCloudSunAnimation extends StatefulWidget {
-  const DrawCloudSunAnimation({Key? key, this.weatherState, this.sereenSize})
+  const DrawCloudSunAnimation({Key? key, this.dayState, this.sereenSize, this.weatherStateA})
       : super(key: key);
-  final String? weatherState;
+  final DayState? dayState;
+  final WeatherStateA? weatherStateA;
   final Size? sereenSize;
 
   @override
@@ -66,12 +67,12 @@ class _DrawCloudSunAnimationState extends State<DrawCloudSunAnimation> {
   @override
   void initState() {
     // TODO: implement initState
-    weatherState = widget.weatherState;
+    weatherState = widget.dayState;
     screenSize = widget.sereenSize;
     maxHeight = screenSize.height;
     maxWidth = screenSize.width;
     switch (weatherState) {
-      case 'CLOUDS':
+      case DayState.night:
         //TODO 1 make clouds icons with moon or sun
         shadowIcon = Icon(Icons.cloud,
             size: maxWidth / 1.5, color: Colors.blueGrey[200]);
@@ -97,7 +98,7 @@ class _DrawCloudSunAnimationState extends State<DrawCloudSunAnimation> {
         }
 
         break;
-      case 'CLEAR':
+      case DayState.evening:
         //TODO
         _showOpacity(isAppear: false, shadow: 0.0, frontShape: 0.0);
         _moveSunOrMoon(centered: true);
@@ -221,4 +222,13 @@ class RadiantGradientMask extends StatelessWidget {
       child: child,
     );
   }
+}
+
+
+enum DayState{
+  morning, day, evening, night
+}
+
+enum WeatherStateA{
+  CLOUDY, SUNNY, CLEAR, RAINY
 }

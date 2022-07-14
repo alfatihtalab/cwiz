@@ -16,7 +16,7 @@ class WeatherRepository {
     try{
       final LocationData locationData = await locationDataProvider.getLocationData();
       final CurrentWeather currentWeather = await weatherDataProvider.readCurrentWeatherFromApi(locationData: locationData);
-      final FiveDaysForecast? fiveDaysForecast = await weatherDataProvider.readFiveDaysForecastFromApi();
+      final FiveDaysForecast fiveDaysForecast = await weatherDataProvider.readFiveDaysForecastFromApi(locationData: locationData);
 
       final WeatherData filteredData = WeatherData(
           currentWeather: currentWeather,

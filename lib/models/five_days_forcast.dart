@@ -17,11 +17,11 @@ String fiveDaysForcastToJson(FiveDaysForecast data) => json.encode(data.toJson()
 class FiveDaysForecast with _$FiveDaysForecast {
   @JsonSerializable(explicitToJson: true)
   const factory FiveDaysForecast({
-    required String cod,
-    required int message,
-    required int cnt,
-    required List<ListElement> list,
-    required City city,
+    required String? cod,
+    required int? message,
+    required int? cnt,
+    required List<ListElement>? list,
+    required City? city,
   }) = _FiveDayForcast;
 
   factory FiveDaysForecast.fromJson(Map<String, dynamic> json) => _$FiveDaysForecastFromJson(json);
@@ -31,14 +31,14 @@ class FiveDaysForecast with _$FiveDaysForecast {
 class City with _$City {
   @JsonSerializable(explicitToJson: true)
   const factory City({
-    required int id,
-    required String name,
-    required Coord coord,
-    required String country,
-    required int population,
-    required int timezone,
-    required int sunrise,
-    required int sunset,
+    required int? id,
+    required String? name,
+    required Coord? coord,
+    required String? country,
+    required int? population,
+    required int? timezone,
+    required int? sunrise,
+    required int? sunset,
   }) = _City;
 
   factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);
@@ -47,8 +47,8 @@ class City with _$City {
 @freezed
 class Coord with _$Coord {
   const factory Coord({
-    required int lat,
-    required int lon,
+    required double? lat,
+    required double? lon,
   }) = _Coord;
 
   factory Coord.fromJson(Map<String, dynamic> json) => _$CoordFromJson(json);
@@ -58,16 +58,15 @@ class Coord with _$Coord {
 class ListElement with _$ListElement {
   @JsonSerializable(explicitToJson: true)
   const factory ListElement({
-    required int dt,
-    required MainClass main,
-    required List<Weather> weather,
-    required Clouds clouds,
-    required Wind wind,
-    required int visibility,
-    required double pop,
-    required Sys sys,
-    required DateTime dtTxt,
-    required Rain rain,
+    required int? dt,
+    required MainClass? main,
+    required List<Weather>? weather,
+    required Clouds? clouds,
+    required Wind? wind,
+    required int? visibility,
+    required double? pop,
+    required Sys? sys,
+    required String? dt_txt,
   }) = _ListElement;
 
   factory ListElement.fromJson(Map<String, dynamic> json) => _$ListElementFromJson(json);
@@ -76,7 +75,7 @@ class ListElement with _$ListElement {
 @freezed
 class Clouds with _$Clouds {
   const factory Clouds({
-    required int all,
+    required int? all,
   }) = _Clouds;
 
   factory Clouds.fromJson(Map<String, dynamic> json) => _$CloudsFromJson(json);
@@ -85,15 +84,15 @@ class Clouds with _$Clouds {
 @freezed
 class MainClass with _$MainClass {
   const factory MainClass({
-    required double temp,
-    required double feelsLike,
-    required double tempMin,
-    required double tempMax,
-    required int pressure,
-    required int seaLevel,
-    required int grndLevel,
-    required int humidity,
-    required double tempKf,
+    required double? temp,
+    required double? feels_like,
+    required double? temp_min,
+    required double? temp_max,
+    required int? pressure,
+    required int? sea_level,
+    required int? grnd_level,
+    required int? humidity,
+    required double? temp_kf,
   }) = _MainClass;
 
   factory MainClass.fromJson(Map<String, dynamic> json) => _$MainClassFromJson(json);
@@ -102,7 +101,7 @@ class MainClass with _$MainClass {
 @freezed
 class Rain with _$Rain {
   const factory Rain({
-    required double the3H,
+    required double? the3H,
   }) = _Rain;
 
   factory Rain.fromJson(Map<String, dynamic> json) => _$RainFromJson(json);
@@ -112,7 +111,7 @@ class Rain with _$Rain {
 class Sys with _$Sys {
   @JsonSerializable(explicitToJson: true)
   const factory Sys({
-    required Pod pod,
+    required String? pod,
   }) = _Sys;
 
   factory Sys.fromJson(Map<String, dynamic> json) => _$SysFromJson(json);
@@ -129,10 +128,10 @@ final podValues = EnumValues({
 class Weather with _$Weather {
   @JsonSerializable(explicitToJson: true)
   const factory Weather({
-    required int id,
-    required MainEnum main,
-    required String description,
-    required String icon,
+    required int? id,
+    required String? main,
+    required String? description,
+    required String? icon,
   }) = _Weather;
 
   factory Weather.fromJson(Map<String, dynamic> json) => _$WeatherFromJson(json);
@@ -149,9 +148,9 @@ final mainEnumValues = EnumValues({
 @freezed
 class Wind with _$Wind {
   const factory Wind({
-    required double speed,
-    required int deg,
-    required double gust,
+    required double? speed,
+    required int? deg,
+    required double? gust,
   }) = _Wind;
 
   factory Wind.fromJson(Map<String, dynamic> json) => _$WindFromJson(json);
